@@ -1,5 +1,6 @@
 'use strict'
 
+
 const bodySelect = document.querySelector('body')
 const secretN = document.querySelector('.secret')
 const userInput = document.querySelector('.userInput')
@@ -13,3 +14,54 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 
+
+
+btnCheck.addEventListener('click', function() {
+    const userGuess = Number(userInput.value)
+    
+    if (!userGuess) {
+        position.textContent = ('⬅️ Entre un nombre')
+    } else if (userGuess===secretNumber) {
+        position.textContent = ('Correct!')
+        bodySelect.classList.add('victory')
+        btnCheck.classList.add('victoryBtn')
+        btnReplay.classList.add('victoryBtn')
+        userInput.classList.add('victoryInput')
+        secretN.classList.add('victorySecret')
+        document.querySelector('h1').classList.add('victoryh1')
+        secretN.textContent = secretNumber
+        btnCheck.disabled = true
+        if (score > highscore) {
+            highscore = score
+            highScoreSelect.textContent = highscore
+        }
+    } else if (userGuess !== secretNumber) {
+        if (score > 1) {
+       position.textContent = userGuess > secretNumber ? 'Trop haut' : 'Trop bas'
+       score --
+       scoreSelect.textContent = score
+       }else {
+        position.textContent = 'Perdu!'
+        btnCheck.disabled = true
+        scoreSelect.textContent = 0
+       }
+    }
+})
+
+btnReplay.addEventListener('click', function () {
+    score = 20
+    secretNumber = Math.trunc(Math.random() * 20) +1
+
+    secretN.textContent = '?'
+    position.textContent = 'Devine...'
+    scoreSelect.textContent = score
+    userInput.value = ''
+
+    bodySelect.classList.remove('victory')
+    btnCheck.classList.remove('victoryBtn')
+    btnReplay.classList.remove('victoryBtn')
+    userInput.classList.remove('victoryInput')
+    secretN.classList.remove('victorySecret')
+    document.querySelector('h1').classList.remove('victoryh1')
+    btnCheck.disabled = false
+})

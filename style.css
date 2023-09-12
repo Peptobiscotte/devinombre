@@ -9,7 +9,7 @@ body {
 body {
     font-family: 'Roboto', sans-serif;
     background: linear-gradient(180deg, rgba(255, 218, 185, 1) 0%, rgba(248, 173, 157, 1) 100%);
-
+    transition: background-color 2s ease;
 }
 
 header {
@@ -46,7 +46,7 @@ h1 {
     right: 50%;
     transform: translateX(50%);
     background-color: #f8ad9d;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .range {
@@ -136,4 +136,34 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="number"] {
     -moz-appearance: textfield;
+}
+
+.victory {
+    background: linear-gradient(180deg, rgba(243, 255, 185, 1) 0%, rgba(157, 248, 158, 1) 100%);
+}
+
+.victoryBtn {
+    background-color: #85ec81
+}
+
+.victoryBtn:hover {
+    background-color: #64c861
+}
+
+.victoryBtn:active {
+    background-color: #49a745
+}
+
+.victoryInput {
+    border: 12px solid #64c861
+}
+
+.victorySecret {
+    background-color: #64c861;
+}
+
+.victoryh1 {
+    border-bottom: 5px solid #49a745;
+    border-image: linear-gradient(90deg, rgb(84, 206, 80) 0%, rgb(174, 236, 181) 100%);
+    border-image-slice: 1;
 }
