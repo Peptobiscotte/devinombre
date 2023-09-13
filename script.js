@@ -14,6 +14,15 @@ let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
 let highscore = 0;
 
+userInput.addEventListener('input', function() {
+if (userInput.value.length === 0) {
+    btnCheck.disabled = true
+} else if (Number(userInput.value) < 1 || Number(userInput.value) > 20){
+    btnCheck.disabled = true
+} else {
+    btnCheck.disabled = false
+}
+})
 
 
 btnCheck.addEventListener('click', function() {
