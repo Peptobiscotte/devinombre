@@ -6,9 +6,9 @@ const secretN = document.querySelector('.secret')
 const userInput = document.querySelector('.userInput')
 const btnCheck = document.querySelector('.checkBtn')
 const btnReplay = document.querySelector('.replay')
-const position = document.querySelector('.position')
-const scoreSelect = document.querySelector('.score')
-const highScoreSelect = document.querySelector('.highScore')
+const position = document.getElementById('position')
+const scoreSelect = document.getElementById('score')
+const highScoreSelect = document.getElementById('highScore')
 
 let secretNumber = Math.trunc(Math.random() * 20) + 1;
 let score = 20;
