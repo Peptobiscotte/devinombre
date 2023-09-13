@@ -57,15 +57,15 @@ h1 {
     font-size: larger;
 }
 
-.replay:hover {
+.replayBtn:hover {
     background-color: #f8ad9d;
 }
 
-.replay:active {
+.replayBtn:active {
     background-color: #f4978e;
 }
 
-.replay {
+.replayBtn {
     position: absolute;
     top: 3rem;
     right: 85%;
