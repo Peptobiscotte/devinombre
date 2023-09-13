@@ -10,9 +10,16 @@ const position = document.getElementById('position')
 const scoreSelect = document.getElementById('score')
 const highScoreSelect = document.getElementById('highScore')
 
-let secretNumber = Math.trunc(Math.random() * 20) + 1;
-let score = 20;
+let secretNumber
+let score
 let highscore = 0;
+
+const setup = function (){
+    secretNumber = Math.trunc(Math.random() * 20) + 1
+    score = 20
+}
+
+setup()
 
 userInput.addEventListener('input', function() {
 if (userInput.value.length === 0) {
@@ -58,8 +65,7 @@ btnCheck.addEventListener('click', function() {
 })
 
 btnReplay.addEventListener('click', function () {
-    score = 20
-    secretNumber = Math.trunc(Math.random() * 20) +1
+    setup()
 
     secretN.textContent = '?'
     position.textContent = 'Devine...'
