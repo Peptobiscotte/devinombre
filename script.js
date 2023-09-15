@@ -22,13 +22,8 @@ const setup = function (){
 setup()
 
 userInput.addEventListener('input', function() {
-if (userInput.value.length === 0) {
-    btnCheck.disabled = true
-} else if (Number(userInput.value) < 1 || Number(userInput.value) > 20){
-    btnCheck.disabled = true
-} else {
-    btnCheck.disabled = false
-}
+    const numValue = Number(userInput.value)
+btnCheck.disabled = numValue > 20 || numValue < 1
 })
 
 
