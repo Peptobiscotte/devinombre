@@ -1,11 +1,11 @@
 'use strict'
 
-
+const title = document.querySelector('h1')
 const bodySelect = document.querySelector('body')
 const secretN = document.querySelector('.secret')
-const userInput = document.querySelector('.userInput')
-const btnCheck = document.querySelector('.checkBtn')
-const btnReplay = document.querySelector('.replayBtn')
+const userInput = document.querySelector('.user--input')
+const btnCheck = document.querySelector('.btn--check')
+const btnReplay = document.querySelector('.btn--replay')
 const position = document.getElementById('position')
 const scoreSelect = document.getElementById('score')
 const highScoreSelect = document.getElementById('highScore')
@@ -40,11 +40,11 @@ btnCheck.addEventListener('click', function() {
     } else if (userGuess===secretNumber) {
         position.textContent = ('Correct!')
         bodySelect.classList.add('victory')
-        btnCheck.classList.add('victoryBtn')
-        btnReplay.classList.add('victoryBtn')
-        userInput.classList.add('victoryInput')
-        secretN.classList.add('victorySecret')
-        document.querySelector('h1').classList.add('victoryh1')
+        btnCheck.classList.add('btn--victory')
+        btnReplay.classList.add('btn--victory')
+        userInput.classList.add('input--victory')
+        secretN.classList.add('secret--victory')
+        title.classList.add('victory--h1')
         secretN.textContent = secretNumber
         btnCheck.disabled = true
         if (score > highscore) {
@@ -73,10 +73,10 @@ btnReplay.addEventListener('click', function () {
     userInput.value = ''
 
     bodySelect.classList.remove('victory')
-    btnCheck.classList.remove('victoryBtn')
-    btnReplay.classList.remove('victoryBtn')
-    userInput.classList.remove('victoryInput')
-    secretN.classList.remove('victorySecret')
-    document.querySelector('h1').classList.remove('victoryh1')
+    btnCheck.classList.remove('btn--victory')
+    btnReplay.classList.remove('btn--victory')
+    userInput.classList.remove('input--victory')
+    secretN.classList.remove('secret--victory')
+    document.querySelector('h1').classList.remove('victory--h1')
     btnCheck.disabled = false
 })

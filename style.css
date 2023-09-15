@@ -57,27 +57,7 @@ h1 {
     font-size: larger;
 }
 
-.replayBtn:hover {
-    background-color: #f8ad9d;
-}
 
-.replayBtn:active {
-    background-color: #f4978e;
-}
-
-.replayBtn {
-    position: absolute;
-    top: 3rem;
-    right: 85%;
-    width: 6em;
-    height: 2em;
-    font-size: 1.5em;
-    font-family: 'Roboto', sans-serif;
-    background-color: #fbc4ab;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-}
 
 .left {
     display: flex;
@@ -86,11 +66,11 @@ h1 {
     gap: 2em;
 }
 
-.userInput:focus {
+.user--input:focus {
     outline: none;
 }
 
-.userInput {
+.user--input {
     font-family: 'Roboto', sans-serif;
     background: none;
     width: 15rem;
@@ -103,25 +83,38 @@ h1 {
 
 }
 
-.checkBtn:hover {
+.btn:hover {
     background-color: #f8ad9d;
 }
 
-.checkBtn:active {
+.btn:active {
     background-color: #f4978e;
 }
 
-.checkBtn {
-    background-color: #fbc4ab;
+.btn {
     font-family: 'Roboto', sans-serif;
-    font-size: 2em;
-    font-weight: 700;
+    background-color: #fbc4ab;
     border: none;
     border-radius: 10px;
-    text-align: center;
-    padding: 1rem 2rem;
     cursor: pointer;
 }
+
+.btn--replay {
+    position: absolute;
+    top: 3rem;
+    right: 85%;
+    width: 6em;
+    height: 2em;
+    font-size: 1.5em;
+}
+
+.btn--check {
+    font-size: 2em;
+    font-weight: 700;
+    text-align: center;
+    padding: 1rem 2rem;
+}
+
 
 .right {
     font-size: 2rem;
@@ -142,27 +135,27 @@ input[type="number"] {
     background: linear-gradient(180deg, rgba(243, 255, 185, 1) 0%, rgba(157, 248, 158, 1) 100%);
 }
 
-.victoryBtn {
+.btn--victory {
     background-color: #85ec81
 }
 
-.victoryBtn:hover {
+.btn--victory:hover {
     background-color: #64c861
 }
 
-.victoryBtn:active {
+.btn--victory:active {
     background-color: #49a745
 }
 
-.victoryInput {
+.input--victory {
     border: 12px solid #64c861
 }
 
-.victorySecret {
+.secret--victory {
     background-color: #64c861;
 }
 
-.victoryh1 {
+.victory--h1 {
     border-bottom: 5px solid #49a745;
     border-image: linear-gradient(90deg, rgb(84, 206, 80) 0%, rgb(174, 236, 181) 100%);
     border-image-slice: 1;
