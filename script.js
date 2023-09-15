@@ -30,9 +30,7 @@ btnCheck.disabled = numValue > 20 || numValue < 1
 btnCheck.addEventListener('click', function() {
     const userGuess = Number(userInput.value)
     
-    if (!userGuess) {
-        position.textContent = ('⬅️ Entre un nombre')
-    } else if (userGuess===secretNumber) {
+    if (userGuess===secretNumber) {
         position.textContent = ('Correct!')
         bodySelect.classList.add('victory')
         btnCheck.classList.add('btn--victory')
