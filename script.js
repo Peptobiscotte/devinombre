@@ -10,16 +10,23 @@ const position = document.getElementById('position')
 const scoreSelect = document.getElementById('score')
 const highScoreSelect = document.getElementById('highScore')
 
-let secretNumber
-let score
-let highscore = 0;
-
-const setup = function (){
-    secretNumber = Math.trunc(Math.random() * 20) + 1
-    score = 20
+const player = {
+    score: '',
+    highscore: 0,
+    secret: 0,
+    
+    reset() {
+        secretNumber = Math.trunc(Math.random() * 20) + 1
+        score = 20
+    }
 }
 
-setup()
+let secretNumber = player.secret
+let score = player.score
+let highscore = player.highscore
+
+player.reset()
+
 
 userInput.addEventListener('input', function() {
     const numValue = Number(userInput.value)
@@ -40,6 +47,7 @@ btnCheck.addEventListener('click', function() {
         title.classList.add('victory--h1')
         secretN.textContent = secretNumber
         btnCheck.disabled = true
+        userInput.disabled = true
         if (score > highscore) {
             highscore = score
             highScoreSelect.textContent = highscore
@@ -58,7 +66,7 @@ btnCheck.addEventListener('click', function() {
 })
 
 btnReplay.addEventListener('click', function () {
-    setup()
+    player.reset()
 
     secretN.textContent = '?'
     position.textContent = 'Devine...'
