@@ -47,13 +47,13 @@ btnCheck.addEventListener('click', function() {
     } else if (userGuess !== secretNumber) {
         if (score > 1) {
        position.textContent = userGuess > secretNumber ? 'Trop haut' : 'Trop bas'
-       score --
-       scoreSelect.textContent = score
+       
        }else {
         position.textContent = 'Perdu!'
         btnCheck.disabled = true
-        scoreSelect.textContent = 0
        }
+       score --
+       scoreSelect.textContent = score
     }
 })
 
