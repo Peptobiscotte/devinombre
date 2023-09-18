@@ -52,7 +52,7 @@ btnCheck.addEventListener('click', function() {
             highscore = score
             highScoreSelect.textContent = highscore
         }
-    } else if (userGuess !== secretNumber) {
+    } else  {
         if (score > 1) {
        position.textContent = userGuess > secretNumber ? 'Trop haut' : 'Trop bas'
        
