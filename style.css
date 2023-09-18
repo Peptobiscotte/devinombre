@@ -116,6 +116,10 @@ h1 {
     padding: 1rem 2rem;
 }
 
+.btn--check:disabled {
+    cursor: not-allowed;
+    pointer-events: none;
+}
 
 .right {
     font-size: 2rem;
