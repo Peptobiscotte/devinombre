@@ -6,30 +6,36 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@500&family=Roboto:wght@900&display=swap"
+        rel="stylesheet">
     <title>Devinombre</title>
 </head>
 
 <body>
     <header>
         <h1>Devine!</h1>
-        <p>(Entre 1 et 20)</p>
-        <button>Rejouer</button>
-        <div>?</div>
+        <p class="range">(Entre 1 et 20)</p>
+        <button class="btn btn--replay">Rejouer</button>
+        <div class="secret">?</div>
     </header>
     <main>
-        <section>
-            <input type="number" />
-            <button>Verifie</button>
+        <section class="left">
+            <input type="number" class="user--input" />
+            <button class="btn btn--check" disabled>Vérifie !</button>
         </section>
-        <section>
-            <p>Devine...</p>
-            <p>💯 Score: <span>20</span></p>
+        <section class="right">
+            <p id="position">Devine...</p>
+            <p>Score: <span id="score">20</span></p>
             <p>
-                🥇 Highscore: <span>0</span>
+                Highscore: <span id="highScore">0</span>
             </p>
         </section>
     </main>
-    <script src="script.js"></script>
+    <script src="script.js">
+
+    </script>
 </body>
 
 </html>
