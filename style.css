@@ -83,13 +83,6 @@ h1 {
 
 }
 
-.btn:hover {
-    background-color: #f8ad9d;
-}
-
-.btn:active {
-    background-color: #f4978e;
-}
 
 .btn {
     font-family: 'Roboto', sans-serif;
@@ -97,6 +90,14 @@ h1 {
     border: none;
     border-radius: 10px;
     cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #f8ad9d;
+}
+
+.btn:active {
+    background-color: #f4978e;
 }
 
 .btn--replay {
