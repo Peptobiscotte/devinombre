@@ -1,0 +1,26 @@
+{
+  "name": "devinombre",
+  "version": "1.0.0",
+  "description": "Make ppl realize what's a 5% probability.",
+  "main": "script.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Peptobiscotte/devinombre.git"
+  },
+  "author": "Maxime Monnier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Peptobiscotte/devinombre/issues"
+  },
+  "homepage": "https://github.com/Peptobiscotte/devinombre#readme",
+  "devDependencies": {
+    "eslint": "^8.49.0",
+    "eslint-config-standard": "^17.1.0",
+    "eslint-plugin-import": "^2.28.1",
+    "eslint-plugin-n": "^16.1.0",
+    "eslint-plugin-promise": "^6.1.1"
+  }
+}
