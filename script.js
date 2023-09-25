@@ -1,5 +1,9 @@
 'use strict'
 
+const MIN_VALUE = 1
+const MAX_VALUE = 20
+const HEALTH = 20
+
 const title = document.querySelector('h1')
 const bodySelect = document.querySelector('body')
 const secretN = document.querySelector('.secret')
@@ -11,19 +15,25 @@ const scoreSelect = document.getElementById('score')
 const highScoreSelect = document.getElementById('highScore')
 
 const player = {
-  score: '',
+  score: HEALTH,
   highscore: 0,
   secret: 0,
 
   reset () {
-    secretNumber = Math.trunc(Math.random() * 20) + 1
-    score = 20
+    this.score = 20
+    this.secret = this.generateSecret()
+  },
+
+  updateHighScore () {
+    if (this.score > this.highscore) {
+      this.highscore = this.score
+    }
+  },
+
+  generateSecret () {
+    return Math.trunc(Math.random() * MAX_VALUE) + MIN_VALUE
   }
 }
-
-let secretNumber = player.secret
-let score = player.score
-let highscore = player.highscore
 
 player.reset()
 
@@ -35,7 +45,7 @@ userInput.addEventListener('input', function () {
 btnCheck.addEventListener('click', function () {
   const userGuess = Number(userInput.value)
 
-  if (userGuess === secretNumber) {
+  if (userGuess === player.secret) {
     position.textContent = ('Correct!')
     bodySelect.classList.add('victory')
     btnCheck.classList.add('btn--victory')
@@ -43,31 +53,28 @@ btnCheck.addEventListener('click', function () {
     userInput.classList.add('input--victory')
     secretN.classList.add('secret--victory')
     title.classList.add('victory--h1')
-    secretN.textContent = secretNumber
+    secretN.textContent = player.secret
     btnCheck.disabled = true
     userInput.disabled = true
-    if (score > highscore) {
-      highscore = score
-      highScoreSelect.textContent = highscore
-    }
+    player.updateHighScore()
+    highScoreSelect.textContent = player.highscore
   } else {
-    if (score > 1) {
-      position.textContent = userGuess > secretNumber ? 'Trop haut' : 'Trop bas'
+    if (player.score > 1) {
+      position.textContent = userGuess > player.secret ? 'Trop haut' : 'Trop bas'
     } else {
       position.textContent = 'Perdu!'
       btnCheck.disabled = true
     }
-    score--
-    scoreSelect.textContent = score
+    player.score--
+    scoreSelect.textContent = player.score
   }
 })
 
 btnReplay.addEventListener('click', function () {
   player.reset()
-
   secretN.textContent = '?'
   position.textContent = 'Devine...'
-  scoreSelect.textContent = score
+  scoreSelect.textContent = player.score
   userInput.value = ''
 
   bodySelect.classList.remove('victory')
@@ -76,5 +83,11 @@ btnReplay.addEventListener('click', function () {
   userInput.classList.remove('input--victory')
   secretN.classList.remove('secret--victory')
   document.querySelector('h1').classList.remove('victory--h1')
-  btnCheck.disabled = false
+  userInput.disabled = false
+  userInput.focus()
+})
+
+window.addEventListener('load', () => {
+  userInput.value = ''
+  btnCheck.disabled = true
 })
