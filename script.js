@@ -77,4 +77,5 @@ btnReplay.addEventListener('click', function () {
   secretN.classList.remove('secret--victory')
   document.querySelector('h1').classList.remove('victory--h1')
   btnCheck.disabled = false
+  userInput.disabled = false
 })
